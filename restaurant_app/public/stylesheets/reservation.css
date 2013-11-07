@@ -1,3 +1,15 @@
+/**
+ * Restaurant App.js, Built using NodeJS and Express
+ * By: James Shin
+ * Date: Nov 4, 2013
+ * Professor: Stanley Pieda
+ * Email: piedas@algonquincollege.com 
+ */
+
+/**
+ * CSS for reservation page, create a well flowing look for the page.
+ */
+
 #res-button-grp{
 	margin-top: 20px;
 	margin-bottom: 40px;
@@ -17,15 +29,30 @@
 }
 
 h2{
-	color: white;
+	color: #444;
 }
 
 h3{
 	margin-left: 40px;
 	text-align: left;
-	color: white;
+	color: #555;
 }
 
 #res-confirm-btn{
 	text-align: center;
+}
+
+.page-header{
+	border-color: #333;
+}
+
+/*centre text with no margin for the h3*/
+#res-well-1 h3, #res-well-2 h3 {
+	text-align: center;
+	margin-left: 0px;
+}
+
+/*give the pointer look for the mouse*/
+.pointer {
+	cursor: pointer;
 }

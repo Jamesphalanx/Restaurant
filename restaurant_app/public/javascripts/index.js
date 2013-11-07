@@ -1,7 +1,7 @@
 /**
  * Restaurant App.js, Built using NodeJS and Express
  * By: James Shin
- * Date: Oct 10, 2013
+ * Date: Nov 4, 2013
  * Professor: Stanley Pieda
  * Email: piedas@algonquincollege.com 
  */

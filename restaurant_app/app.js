@@ -30,11 +30,9 @@ var http = require('http');
 var path = require('path');
 
 // database using mongojs, sets the current database as "Restaurant"
-var databaseUrl = "Restaurant";
+var databaseUrl = "jamesphalanx:password@ds053668.mongolab.com:53668/restaurant_db";
 //gets 3 collections from the "Restaurant" database. "reservation", "menu" and "users"
-var collections = ["reservations", "menu", "users", "fs.chunks"];
-
-var image = require('./routes/image');
+var collections = ["reservations", "menu"];
 
 //sets a variable 'express' as the library express, this allows us to use
 //the Express functionaities given to us.
@@ -132,20 +130,17 @@ app.use(function(req,res){
     res.render('404.jade', {title: "Page not found"});
 });
 
+//This is the code for creating a server on the specific port.
+var server = http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
 
-var GridStore = require('mongodb').GridStore;
-var Grid = require('mongodb').Grid;
+//initate the socket io, and allow it to listen to the current active server.
+var io = require('socket.io').listen(server);
+
 
 //routes to specific pages, either index or reservation.
 //anything other than indes or reservation throws a 404 error.
 //sends the db.menu collection to index, and the whole database to reservation
-
-
 app.get('/', routes.index(db.menu));
-app.get('/image', image.image(db));
-app.get('/reservation', reservation.reservation(db));
-
-//This is the code for creating a server on the specific port.
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+app.get('/reservation', reservation.reservation(db, io));

@@ -12,12 +12,14 @@ extends layout
 
 block content
 	//additional javascipt included.
+	script(src='/socket.io/socket.io.js')
 	script(src='/javascripts/reservation.js')
 	link(rel='stylesheet', href='/stylesheets/reservation.css')
 	div#res-btns.col-xs-12.col-sm-12.col-md-8.col-lg-6
 		div.page-header
 			h1 Table Reservation,   
 				small#home-subtitle-header Click to Reserve Tool
+		//selecting day button group
 		div#res-button-grp.btn-group(data-toggle="buttons")
 			label#res-monday-btn.btn.btn.btn-default Monday
 				input(type="radio", name="options")
@@ -33,15 +35,18 @@ block content
 				input(type="radio", name="options")
 			label#res-sunday-btn.btn.btn-default Sunday
 				input(type="radio", name="options")
+		//Time selector group
 		div#res-time-grp
 			span.text-primary Open  
-			input.res-time-slider(type="text", value="", data-slider-min="-12", data-slider-max="12",
+			//the slider to choose the time by using the slider library
+			input.res-time-slider(type="text", value="", data-slider-min="-6", data-slider-max="6",
 				data-slider-step="1", data-slider-value="1", data-slider-orientation="horizontal", data-slider-selection="after",
 				data-slider-tooltip="hide")
 			span.text-danger  Closed
-			h2 Time :  
-				span.res-time-text 3:30 PM
+			h2 Start Time :  
+				span.res-time-text
 		div.page-header
+		//small information about reservation rules
 		div
 			h2
 				u
@@ -52,25 +57,42 @@ block content
 			h3
 				span.glyphicon.glyphicon-hand-right
 				|  Tables are only reservable for 1 hour maximum.
+	//table visual row.
 	div#res-well-1.col-xs-6.col-sm-6.col-md-2.col-lg-3
-		div#res-well1-table1.well Table 1
-		div#res-well1-table2.well Table 2
-		div#res-well1-table3.well Table 3
-		div#res-well1-table4.well Table 4
-		div#res-well1-table5.well Table 5
-		div#res-well1-table6.well Table 6
+		div#res-well1-table1.well
+			div.page-header
+				h2.lead Table 1
+			h3 Open
+		div#res-well1-table2.well
+			div.page-header
+				h2.lead Table 2
+			h3 Open
+		div#res-well1-table3.well
+			div.page-header
+				h2.lead Table 3
+			h3 Open
 	div#res-well-2.col-xs-6.col-sm-6.col-md-2.col-lg-3
-		div#res-well2-table1.well Table 7
-		div#res-well2-table2.well Table 8
-		div#res-well2-table3.well Table 9
-		div#res-well2-table4.well Table 10
-		div#res-well2-table5.well Table 11
-		div#res-well2-table6.well Table 12
-	div#res-confirm-btn.page-header.col-xs-12.col-sm-12.col-md-8.col-lg-6
-		h2 Reservation at : 
-			span.res-time-text 3:30 PM
-			br
-			span#res-date-text
-			span#res-date2-text
-		button#res-confirm.btn.btn-lg.btn-success Confirm Reservation
+		div#res-well2-table1.well
+			div.page-header
+				h2.lead Table 4
+			h3 Open
+		div#res-well2-table2.well
+			div.page-header
+				h2.lead Table 5
+			h3 Open
+		div#res-well2-table3.well
+			div.page-header
+				h2.lead Table 6
+			h3 Open
+	//reservation button row.
+	div.row
+		div.col-xs-0.col-sm-0.col-md-4.col-lg-6
+		div#res-confirm-btn.page-header.col-xs-12.col-sm-12.col-md-8.col-lg-6
+			h1#res-table
+			h2 Reservation at : 
+				span.res-time-text
+				br
+				span#res-date-text
+				span#res-date2-text
+			button#res-confirm.btn.btn-lg.btn-success Confirm Reservation
 	//p #{data[0]['email']}
