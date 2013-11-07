@@ -1,0 +1,82 @@
+/**
+ * Restaurant App.js, Built using NodeJS and Express
+ * By: James Shin
+ * Date: Oct 10, 2013
+ * Professor: Stanley Pieda
+ * Email: piedas@algonquincollege.com 
+ */
+
+ /*
+ 	CSS for the main page.
+ 	This will apply the style for the index page.
+ */
+
+#home-carousel {
+	height: 400px;
+	overflow: hidden;
+}
+
+#home-links {
+	height: 400px;
+}
+#home-links h3{
+	margin:0;
+	padding:0px;
+}
+
+#home-subtitle-header {
+	color: #444;
+}
+
+#home-dynamic-menu{
+	height: 300px;
+}
+
+#home-navmenu li a{
+	color: #aaa;
+}
+
+#home-tab-content {
+	min-height: 270px;
+	background-color: white;
+	font-family: Zapf Chancery, cursive;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+}
+#home-tab-content h2, h3, h4{
+	margin-top: 0px;
+	padding: 10px;
+	font-family: Zapf Chancery, cursive;
+}
+#home-tab-content h4{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#home-reservation-lbl {
+	display:none;
+}
+
+/*Sets the image division, and round corners*/
+#home-menuitem-show {
+	background-color: black;
+	top :170px;
+	right:40px;
+	position:absolute;
+	height: 200px;
+	width: 400px;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    background-image: url(/images/home-menuimg-0.jpg);
+}
+/*google location div*/
+#home-google-location {
+	background-color: black;
+	top :170px;
+	left:40px;
+	position:absolute;
+	height: 200px;
+	width: 88%;
+}

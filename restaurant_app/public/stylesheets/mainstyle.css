@@ -1,0 +1,53 @@
+/**
+ * Restaurant App.js, Built using NodeJS and Express
+ * By: James Shin
+ * Date: Oct 10, 2013
+ * Professor: Stanley Pieda
+ * Email: piedas@algonquincollege.com 
+ */
+
+ /*
+ 	CSS for the main website.
+ 	This will allow a constant look through out the webpage.
+ */
+body {
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	/*Sets the background image and repeats*/
+	background-image:url('/images/background-img.png');
+	background-repeat:repeat;
+	padding-top: 70px;
+}
+
+a {
+	color: #00B7FF;
+}
+
+#btn-login {
+	margin-right: 20px;
+}
+
+#navbar-title {
+	color: #fff;
+}
+
+h1 {
+	color: #fff;
+}
+
+#layout-login-div {
+	display: none;
+	padding: 10px;
+	top: 8px;
+	right: 100px;
+	position: fixed;
+	z-index: 10000;
+}
+
+#layout-login-div table tr{
+	padding-bottom: 10px;
+}
+
+#layout-btn-table {
+	width:100%;
+	margin-top: 5px;
+}

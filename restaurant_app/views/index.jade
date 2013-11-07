@@ -1,0 +1,91 @@
+//
+	Restaurant App.js, Built using NodeJS and Express
+	By: James Shin
+	Date: Oct 10, 2013
+	Professor: Stanley Pieda
+	Email: piedas@algonquincollege.com 
+
+//
+	This is the Index page, loads the main website page automatically. it shows the location of the 
+	restaurant using google map and shows the current day's menu.
+
+extends layout
+
+block content
+	//Load CSS & JavaScript for this page
+	//shows google map restaurant location
+	script(src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDvysdpLfySdFLqvY3CDdgQhv5QtOY6R_Q&sensor=false")
+	//additional javascipt included.
+	script(src='/javascripts/index.js')
+	link(rel='stylesheet', href='/stylesheets/index.css')
+	//Division containing picture carousel
+	div#home-carousel.carousel.slide.col-md-6.col-lg-6
+		div.carousel-inner
+			//sets the first item to be active in the carousel
+			div.item.active
+				//Sets each image to be displayed.
+				img(src="/images/home-img-1.jpg" alt="")
+			div.item
+				img(src="/images/home-img-2.jpg" alt="")
+			div.item
+				img(src="/images/home-img-3.jpg" alt="")
+			div.item
+				img(src="/images/home-img-4.jpeg" alt="")
+	//Division 
+	div#home-links.col-xs-12.col-md-6.col-lg-6
+		br
+		h3
+			//creates a button from Bootstrap
+			button#home-reservation-btn.btn.btn-lg.btn-default
+				span.glyphicon.glyphicon-cutlery  Reservation
+			&nbsp
+			span#home-reservation-lbl.label.label-info
+				span.glyphicon.glyphicon-chevron-left
+				|  Reserve your table by clicking here!
+		br
+		//sets the tab page, using bootstrap it allows for multiple divisons
+		//to be shown using data-toggle and href.
+		ul#home-navmenu.nav.nav-tabs
+			li.active
+				a(href="#menu", data-toggle="tab")
+					span.glyphicon.glyphicon-align-justify  Menu
+			li
+				a(href="#contact", data-toggle="tab")
+					span.glyphicon.glyphicon-phone  Contact
+			li
+				a(href="#location", data-toggle="tab")
+					span.glyphicon.glyphicon-globe  Location
+		//This is the location where the tabs are switched
+		//each division will contain the tab contents
+		div#home-tab-content.tab-content
+			div#menu.tab-pane.fade.active.in
+				div#home-menuitem-show
+				h2
+					u Menu
+				each item in menu
+					h3
+						= item['day'] + "'s Menu"
+					- var i = 0;
+					each menu_item in item['menu']
+						h4(id="home-menu-item"+i)
+							span.glyphicon.glyphicon-minus
+							= " " + menu_item['name'] + " " + menu_item['price']
+						- i++;
+			div#contact.tab-pane.fade
+				h2
+					u Contact us
+				h3 Phone #
+				h4 613-552-6656
+				br
+				h3 Email Address
+				h4 Jamesphalanx@gmail.com
+
+			div#location.tab-pane.fade
+				h2
+					u Location
+				div#home-google-location
+	//Footer
+	div#home-description.col-xs-12.col-md-6.col-lg-6
+		div.page-header
+			h1 Phalanx Gourmet  
+				small#home-subtitle-header Fresh Food Done Right.

@@ -1,0 +1,50 @@
+//
+    Restaurant App.js, Built using NodeJS and Express
+    By: James Shin
+    Date: Oct 10, 2013
+    Professor: Stanley Pieda
+    Email: piedas@algonquincollege.com 
+
+//
+    This is the layout page, where the header is built and important libraries such as
+    JQuery and Bootstrap is pulled so that all pages will have access to it. this page uses 
+    jade to have a multiple template system. 
+
+!!!5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/mainstyle.css')
+    link(rel='stylesheet', href='/stylesheets/slider.css')
+    script(src='/javascripts/jquery-2.0.3.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/bootstrap-slider.js')
+    script(src='/javascripts/layout.js')
+  body
+    // Website Header
+    nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse(role="navigation")
+        //page link that is shown 
+        a#navbar-title.navbar-brand(href="/") Phalanx Gourmet
+        //sign in button
+        button#btn-login.btn.btn-default.navbar-btn.pull-right(type="button") Sign in
+    //Division that holds the sign in inputs and buttons.
+    div#layout-login-div.panel.panel-default
+        table
+            tr
+                th Username :
+                td
+                    input#layout-input-username(type="username")
+            tr
+                th Password :
+                td
+                    input#layout-input-password(type="password")
+        table#layout-btn-table
+            tr
+                td
+                    button#layout-login-btn.btn.btn-primary.btn-sm.btn-block Log in
+                td
+                    button#layout-cancel-btn.btn.btn-danger.btn-sm.btn-block Cancel
+    block content
+    block footer

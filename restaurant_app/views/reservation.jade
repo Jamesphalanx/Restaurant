@@ -1,0 +1,76 @@
+//
+	Restaurant App.js, Built using NodeJS and Express
+	By: James Shin
+	Date: Oct 10, 2013
+	Professor: Stanley Pieda
+	Email: piedas@algonquincollege.com 
+
+//
+	This will contain the table reservation page, it is currently under construction.
+
+extends layout
+
+block content
+	//additional javascipt included.
+	script(src='/javascripts/reservation.js')
+	link(rel='stylesheet', href='/stylesheets/reservation.css')
+	div#res-btns.col-xs-12.col-sm-12.col-md-8.col-lg-6
+		div.page-header
+			h1 Table Reservation,   
+				small#home-subtitle-header Click to Reserve Tool
+		div#res-button-grp.btn-group(data-toggle="buttons")
+			label#res-monday-btn.btn.btn.btn-default Monday
+				input(type="radio", name="options")
+			label#res-tuesday-btn.btn.btn-default Tuesday
+				input(type="radio", name="options")
+			label#res-wendsday-btn.btn.btn-default Wendsday
+				input(type="radio", name="options")
+			label#res-thursday-btn.btn.btn-default Thursday
+				input(type="radio", name="options")
+			label#res-friday-btn.btn.btn-default Friday
+				input(type="radio", name="options")
+			label#res-saturday-btn.btn.btn-default Saturday
+				input(type="radio", name="options")
+			label#res-sunday-btn.btn.btn-default Sunday
+				input(type="radio", name="options")
+		div#res-time-grp
+			span.text-primary Open  
+			input.res-time-slider(type="text", value="", data-slider-min="-12", data-slider-max="12",
+				data-slider-step="1", data-slider-value="1", data-slider-orientation="horizontal", data-slider-selection="after",
+				data-slider-tooltip="hide")
+			span.text-danger  Closed
+			h2 Time :  
+				span.res-time-text 3:30 PM
+		div.page-header
+		div
+			h2
+				u
+					b Table Reservation Rules
+			h3
+				span.glyphicon.glyphicon-hand-right
+				|  You may only book a table week in advanced.
+			h3
+				span.glyphicon.glyphicon-hand-right
+				|  Tables are only reservable for 1 hour maximum.
+	div#res-well-1.col-xs-6.col-sm-6.col-md-2.col-lg-3
+		div#res-well1-table1.well Table 1
+		div#res-well1-table2.well Table 2
+		div#res-well1-table3.well Table 3
+		div#res-well1-table4.well Table 4
+		div#res-well1-table5.well Table 5
+		div#res-well1-table6.well Table 6
+	div#res-well-2.col-xs-6.col-sm-6.col-md-2.col-lg-3
+		div#res-well2-table1.well Table 7
+		div#res-well2-table2.well Table 8
+		div#res-well2-table3.well Table 9
+		div#res-well2-table4.well Table 10
+		div#res-well2-table5.well Table 11
+		div#res-well2-table6.well Table 12
+	div#res-confirm-btn.page-header.col-xs-12.col-sm-12.col-md-8.col-lg-6
+		h2 Reservation at : 
+			span.res-time-text 3:30 PM
+			br
+			span#res-date-text
+			span#res-date2-text
+		button#res-confirm.btn.btn-lg.btn-success Confirm Reservation
+	//p #{data[0]['email']}

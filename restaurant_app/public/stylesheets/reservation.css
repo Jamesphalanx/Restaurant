@@ -1,0 +1,31 @@
+#res-button-grp{
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+#res-time-grp{
+	margin-bottom: 40px;
+}
+
+#res-btns{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.res-time-slider{
+	width: 400px;
+}
+
+h2{
+	color: white;
+}
+
+h3{
+	margin-left: 40px;
+	text-align: left;
+	color: white;
+}
+
+#res-confirm-btn{
+	text-align: center;
+}
